@@ -45,9 +45,10 @@ rule_api = RuleAPI(auth)
 rule_1 = {
 	"tag":"rule_1", "value":"(airwoot OR woot)"
 }
+
 >>rule_api.add_rule(rule_1)
 >>True
-...
+```
 
 
 #### Create a new Historical Job
@@ -118,8 +119,3 @@ historical_job.download_urls()
 ```
 historical_job.dump_to_db(db='mongo_or_redis', collection_name="mentions")
 ```
-
-
-
-
-
