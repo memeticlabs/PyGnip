@@ -71,4 +71,17 @@ class RuleAPI(object):
 			return None		
 
 
+def format_rule(rule_or_rules):
+	"""wrap a rule in gnip rule format and return rule string.
+
+	expects a dict of `tag` and `value` key-pair, for e.g.
+
+	{
+		"tag": "rule_1",
+		"value": "(hot OR not)"
+	}
+	"""
+	if not isinstance(rule_or_rules, list):
+		rule_or_rules = [rule_or_rules]
 	
+	return json.dumps(rule_or_rules)

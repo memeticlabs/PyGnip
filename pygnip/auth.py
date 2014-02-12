@@ -20,4 +20,4 @@ class GnipBasicAuth():
         self.auth_handler = 'Basic ' + \
             base64.urlsafe_b64encode("%s:%s" % (username, password))
 
-		self.account = account_name
+        self.account = account_name
