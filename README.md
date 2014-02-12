@@ -78,9 +78,8 @@ historical_job = historical_api.create_job(
 historical_job.id
 
 # create a job class using job_id
-from pygnip.historical import GnipJob
-historical_job = GnipJob(job_id)
-historical_job.id
+historical_job = HistoricalAPI(auth, job_id)
+historical_job.job_id
 
 ```
 
@@ -108,10 +107,18 @@ historical_job.reject()
 historical_job.ready()
 ```
 
-#### Download the completed job
+#### Download the S3 urls
 
 ```
-historical_job.download(db='mongo')
+historical_job.download_urls()
+```
+
+#### Dump the data from urls to `mongodb` or `redis`
+
+```
+historical_job.dump_to_db(db='mongo_or_redis', collection_name="mentions")
+```
+
 
 
 
