@@ -33,10 +33,10 @@ API Methods:
 
 ```
 from pygnip.utils import RuleAPI
-from pygnip.historical import GnipAuth
+from pygnip.historical import GnipBasicAuth
 
 # set basic auth
-auth = GnipAuth(user="", pass="")
+auth = GnipBasicAuth(user="", pass="", account="")
 
 # api handler
 rule_api = RuleAPI(auth)
@@ -45,8 +45,8 @@ rule_api = RuleAPI(auth)
 rule_1 = {
 	"tag":"rule_1", "value":"(airwoot OR woot)"
 }
-rule_api.add_rule(rule_1)
-rule_api.add_rule(rule_2)
+>>rule_api.add_rule(rule_1)
+>>True
 ...
 
 
@@ -54,10 +54,10 @@ rule_api.add_rule(rule_2)
 
 ```
 from pygnip.historical import HistoricalAPI
-from pygnip.historical import GnipAuth
+from pygnip.historical import GnipBasicAuth
 
 # set basic auth
-auth = GnipAuth(user="", pass="")
+auth = GnipAuth(user="", pass="", account="")
 
 # create api endpoint
 historical_api = HistoricalAPI(auth)
