@@ -24,7 +24,8 @@ API Methods:
 
 * Monitor the Progress of the running job
 * Download the Completed Job
-* The API Methods and their requirements for each phase are described in the documentation below.
+
+The API Methods and their requirements for each phase are described in the documentation below.
 
 
 ### API Methods 
@@ -55,10 +56,10 @@ rule_1 = {
 
 ``` python
 from pygnip.historical import HistoricalAPI
-from pygnip.historical import GnipBasicAuth
+from pygnip.auth import GnipBasicAuth
 
 # set basic auth
-auth = GnipAuth(user="", pass="", account="")
+auth = GnipBasicAuth(user="", pass="", account="")
 
 # create api endpoint
 historical_api = HistoricalAPI(auth)
@@ -76,7 +77,7 @@ historical_job = historical_api.create_job(
 )
 
 # get the job id
-historical_job.id
+historical_job.job_id
 
 # create a job class using job_id
 historical_job = HistoricalAPI(auth, job_id)
