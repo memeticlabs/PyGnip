@@ -31,7 +31,7 @@ API Methods:
 
 #### Create a new rule
 
-```
+``` python
 from pygnip.utils import RuleAPI
 from pygnip.historical import GnipBasicAuth
 
@@ -53,7 +53,7 @@ rule_1 = {
 
 #### Create a new Historical Job
 
-```
+``` python
 from pygnip.historical import HistoricalAPI
 from pygnip.historical import GnipBasicAuth
 
@@ -119,3 +119,11 @@ historical_job.download_urls()
 ```
 historical_job.dump_to_db(db='mongo_or_redis', collection_name="mentions")
 ```
+
+
+== Copyright and License ==
+
+(c) 2014 Airwoot.
+
+MIT License
+
